@@ -1,0 +1,24 @@
+:root {
+  /* Neutral Palette */
+  --neutral-900: #121212;
+  --neutral-800: #262626;
+  --neutral-500: #717178;
+  --neutral-400: #949497;
+  --neutral-0: #FFFFFF;
+
+  /* Blue Palette (Primary/Action) */
+  --blue-600: #177DFF;
+  --blue-400: #4CA6FF;
+
+  /* Semantic Colors (Feedback) */
+  --red-500: #D64D5B;   /* For incorrect characters/errors */
+  --green-500: #4DD67B; /* For correct characters */
+  --yellow-400: #646464; /* For warnings or highlights */
+}
+
+*{
+  font-family: "Sora", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
