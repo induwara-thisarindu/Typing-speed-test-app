@@ -21,4 +21,155 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: white;
 }
+
+body {
+  background-color: var(--neutral-900);
+  max-width: 1440px;
+  margin: auto;
+}
+
+/* Header */
+
+header {
+  padding: 20px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav img {
+  width: 300px;
+}
+
+header nav .personal_best_holder {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+}
+
+header nav .personal_best_holder p {
+  color: var(--neutral-400);
+}
+
+header nav .personal_best_holder span {
+  color: var(--neutral-0);
+  font-weight: 400;
+}
+
+header nav .personal_best_holder img{
+  width: 30px;
+}
+
+header .test_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+header .test_info::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5px;
+  background-color: var(--neutral-500);
+}
+
+header .test_info ul {
+  display: flex;
+  gap: 30px;
+}
+
+header .test_info ul li {
+  list-style-type: none;
+  position: relative;
+  padding: 0px 10px 0px 0px;
+}
+
+header .test_info ul li:not(:last-child)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 90%;
+  background-color: var(--neutral-500);
+}
+
+header .test_info ul li h3{
+  color: var(--neutral-400);
+  font-weight: 400;
+}
+
+header .test_info ul li h3 span {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-left: 10px;
+}
+
+header .test_info .test_settings {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+}
+
+header .test_info .test_settings label {
+  background-color: transparent;
+  border: 1px solid var(--neutral-500);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+header .test_info .test_settings *{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: ease-in-out 0.3s;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input[type="radio"]:checked + label{
+  border: 2px solid var(--blue-400);
+}
+
+input[type="radio"]:checked + label p {
+  color: var(--blue-400);
+}
+
+/* Divider between difficulty and time settings */
+header .test_info .test_settings .difficulty_setting {
+  position: relative;
+  padding-right: 20px;
+}
+
+header .test_info .test_settings .difficulty_setting:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 90%;
+  background-color: var(--neutral-500);
+}
+
+/* Header finish */

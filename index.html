@@ -12,7 +12,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello!</h1>
+  <header>
+    <nav>
+      <img src="/assets/images/logo-large.svg" alt="logo_image">
+      <div class="personal_best_holder">
+        <img src="assets/images/icon-personal-best.svg" alt="trophy">
+        <p>Personal best: <span id="personal_best_score">92 WPM</span></p>
+      </div>
+    </nav>
+
+    <section class="test_info">
+      <ul class="stats">
+        <li>
+          <h3>WPM: <span id="words_per_min">0</span></h3>
+        </li>
+        <li>
+          <h3>Accuracy: <span id="accuracy">100%</span></h3>
+        </li>
+        <li>
+          <h3>Time: <span id="time">0:60</span></h3>
+        </li>
+      </ul>
+      <div class="test_settings">
+        <div class="difficulty_setting">
+          <h3>Difficulty:</h3>
+          <div class="difficulty_buttons">
+            <input type="radio" id="easy" name="difficulty_level" value="easy">
+            <label for="easy"><p>Easy</p></label>
+            <input type="radio" id="medium" name="difficulty_level" value="medium">
+            <label for="medium"><p>Medium</p></label>
+            <input type="radio" id="hard" name="difficulty_level" value="hard">
+            <label for="hard"><p>Hard</p></label>
+          </div>
+        </div>
+        <div class="time_settings">
+          <h3>Mode:</h3>
+          <div class="difficulty_buttons">
+            <input type="radio" id="timed" name="time_setting_value" value="timed">
+            <label for="timed"><p>Timed (60s)</p></label>
+            <input type="radio" id="passage" name="time_setting_value" value="passage">
+            <label for="passage"><p>Passage</p></label>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
 <!-- 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
