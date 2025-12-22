@@ -33,7 +33,7 @@ body {
 /* Header */
 
 header {
-  padding: 20px;
+  padding: 30px;
 }
 
 header nav {
@@ -173,3 +173,56 @@ header .test_info .test_settings .difficulty_setting:not(:last-child)::after {
 }
 
 /* Header finish */
+
+/* Test Content */
+
+main .test_content{
+  position: relative;
+}
+
+main .test_content .modal {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+main .test_content .modal button {
+  background-color: var(--blue-600);
+}
+
+main .test_content {
+  padding: 0px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .test_content h1 {
+  font-weight: 400;
+  font-size: 45px;
+  color: var(--neutral-400);
+  border-bottom: 1px solid var(--neutral-400);
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+main .test_content button {
+  background-color: var(--neutral-800);
+  border: none;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
