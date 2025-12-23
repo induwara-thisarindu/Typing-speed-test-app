@@ -10,7 +10,6 @@ const testText = document.getElementById("test_text")
 const retakeTestBtn = document.getElementById("retake_test_btn")
 const difficultyRadios = document.querySelectorAll('input[name="difficulty_level"]')
 const timeModeSelect = document.querySelectorAll('input[name="time_setting_value"]')
-const cursor = document.querySelector('.custom-cursor');
 
 
 let selectedDifficulty = document.querySelector('input[name="difficulty_level"]:checked').value;
@@ -25,22 +24,6 @@ let charIndex = 0;
 let mistakes = 0;
 
 let allPassages = []
-
-window.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-window.addEventListener('mousedown', () => cursor.classList.add('clicking'));
-window.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
-
-const interactables = [modal, retakeTestBtn, ...difficultyRadios, ...timeModeSelect];
-
-interactables.forEach(el => {
-    if(!el) return;
-    el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-});
 
 async function loadPassageData() {
     try {

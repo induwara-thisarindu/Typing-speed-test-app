@@ -21,37 +21,6 @@
   color: white;
 }
 
-/* cursor */
-
-* {
-    cursor: none !important;
-}
-
-.custom-cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ffd700;
-    background-color: #ffd700;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease-out, background-color 0.2s;
-    transform: translate(-50%, -50%);
-}
-
-.custom-cursor.clicking {
-    transform: translate(-50%, -50%) scale(0.8);
-    background-color: rgba(255, 214, 0, 0.5);
-}
-
-.custom-cursor.hovering {
-    transform: translate(-50%, -50%) scale(1.5);
-    background-color: rgba(255, 214, 0, 0.1);
-}
-
-/* cursor finish */
-
 body {
   background-color: var(--neutral-900);
   max-width: 1440px;
