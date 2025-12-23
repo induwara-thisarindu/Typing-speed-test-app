@@ -27,6 +27,7 @@ A sleek, dark-themed typing speed application built with **Vanilla JavaScript**.
 *   **Persistent Personal Best**: Saves your highest WPM and corresponding Accuracy to localStorage, so your record stays even after a refresh.
     
 *   **Custom Interactive Cursor**: A bespoke "ring and dot" cursor that reacts to clicks and hovers across the UI.
+*   Not YET RESPONSIVE!!!
     
 
 📊 The Math Behind the Stats
