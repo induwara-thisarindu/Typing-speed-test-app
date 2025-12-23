@@ -62,3 +62,15 @@ To ensure the test is accurate to industry standards, I worked with Gemini to re
 3.  The timer starts automatically when you type the first character.
     
 4.  Hit Backspace to fix errors or Escape to quickly reset the test.
+
+
+🔜 Future Roadmap
+-------------
+
+* **Enhanced Results UI:** Implementing the high-fidelity modals for Baselines, High Scores, and Test Completions.
+* **Database Integration:** Moving from localStorage to Supabase to allow for global accounts and leaderboards.
+* **Social Sharing:** Adding functionality to share score cards directly to social media.
+
+
+------------------------------
+*created by Induwara Thisarindu*
