@@ -1,4 +1,4 @@
-⌨️ Typing Speed Test V1.1
+⌨️ Typing Speed Test V1.2
 =========================
 
 A sleek, dark-themed typing speed application built with **Vanilla JavaScript**. This project was designed to test typing proficiency through various difficulty levels and modes, featuring real-time feedback and persistent high scores.
