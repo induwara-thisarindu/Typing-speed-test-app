@@ -1,5 +1,5 @@
-⌨️ Typing Speed Test V1
-=======================
+⌨️ Typing Speed Test V1.1
+=========================
 
 A sleek, dark-themed typing speed application built with **Vanilla JavaScript**. This project was designed to test typing proficiency through various difficulty levels and modes, featuring real-time feedback and persistent high scores.
 
@@ -26,8 +26,7 @@ A sleek, dark-themed typing speed application built with **Vanilla JavaScript**.
     
 *   **Persistent Personal Best**: Saves your highest WPM and corresponding Accuracy to localStorage, so your record stays even after a refresh.
     
-*   **Custom Interactive Cursor**: A bespoke "ring and dot" cursor that reacts to clicks and hovers across the UI.
-*   Not YET RESPONSIVE!!!
+*   Responsive!
     
 
 📊 The Math Behind the Stats
@@ -67,7 +66,6 @@ To ensure the test is accurate to industry standards, I worked with Gemini to re
 🔜 Future Roadmap
 -------------
 
-* **Enhanced Results UI:** Implementing the high-fidelity modals for Baselines, High Scores, and Test Completions.
 * **Database Integration:** Moving from localStorage to Supabase to allow for global accounts and leaderboards.
 * **Social Sharing:** Adding functionality to share score cards directly to social media.
 
