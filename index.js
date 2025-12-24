@@ -5,10 +5,8 @@ const wordsPerMin = document.getElementById("words_per_min")
 const accuracy = document.getElementById("accuracy")
 const time = document.getElementById("time")
 const startBtn = document.getElementById("start_test_btn")
-const testContent = document.getElementById("test_content")
-const modal = document.getElementById("modal")
-const textHolder = document.getElementById("text_holder")
 const testText = document.getElementById("test_text")
+const modal = document.getElementById("modal")
 const retakeTestBtns = document.querySelectorAll(".retake_test_btn")
 const difficultyRadios = document.querySelectorAll('input[name="difficulty_level"]')
 const timeModeRadios = document.querySelectorAll('input[name="time_setting_value"]')
@@ -17,7 +15,6 @@ const modalWpm = document.getElementById("modal_words_per_min")
 const modalAcc = document.getElementById("modal_accuracy")
 const modalChars = document.getElementById("char_stat")
 const resultTitle = resultModal.querySelector("h1")
-const resultDesc = resultModal.querySelector("p")
 const resultIcon = resultModal.querySelector(".completed_icon")
 const goAgainText = resultModal.querySelector(".retake_test_btn p")
 const difficultySelect = document.getElementById("difficulty_settings_select")
@@ -37,10 +34,9 @@ let allPassages = []
 async function loadPassageData() {
     try {
         const res = await fetch('./data.json')
-        const data = await res.json()
-        allPassages = data
+        allPassages = await res.json()
     } catch (error) {
-        console.error("Error:", error)
+        console.error("Error loading data:", error)
     }
 }
 loadPassageData()
@@ -101,12 +97,10 @@ function handleBackspace() {
 
 window.addEventListener("keydown", (e) => {
     if (!isTestRunning) return
-    if (["Shift", "Control", "Alt", "Meta", "CapsLock", "Tab", "Escape"].includes(e.key)) return
-
     if (e.key === "Backspace") {
         handleBackspace()
-    } else if (e.key.length === 1) {
-        handleTypingLogic(e.key)
+    } else {
+        mobileInput.focus()
     }
 })
 
@@ -116,25 +110,26 @@ mobileInput.addEventListener("input", (e) => {
     } else if (e.data) {
         handleTypingLogic(e.data)
     }
-    mobileInput.value = ""
+    mobileInput.value = "" 
+})
+
+document.addEventListener("click", () => {
+    if (isTestRunning) mobileInput.focus()
 })
 
 startBtn.addEventListener('click', (e) => {
     e.stopPropagation()
-    if (allPassages.length === 0) return
-    modal.style.display = "none"
-    mobileInput.focus()
     initTest()
 })
 
 modal.addEventListener('click', () => {
-    if (allPassages.length === 0) return
-    modal.style.display = "none"
-    mobileInput.focus()
     initTest()
 })
 
 function initTest() {
+    if (allPassages.length === 0) return
+    modal.style.display = "none"
+    mobileInput.focus()
     charIndex = 0
     mistakes = 0
     wordsPerMin.innerText = "0"
@@ -164,7 +159,7 @@ function startTimer() {
     }
 }
 
-function endTest(reason) {
+function endTest() {
     clearInterval(timerInterval)
     timerInterval = null
     isTestRunning = false
@@ -188,11 +183,12 @@ function calculateResults() {
 
     if (pbData.wpm === 0) {
         resultTitle.innerText = "Baseline Established!"
-        resultIcon.src = "./assets/images/icon-completed.svg"
     } else if (wpm > pbData.wpm) {
         resultTitle.innerText = "High Score Smashed!"
         if (goAgainText) goAgainText.innerText = "Beat This Score"
         resultIcon.src = "./assets/images/icon-personal-best.svg"
+        resultIcon.src = "./assets/images/pattern-confetti.svg"; 
+        resultModal.classList.add("is-pb");
     } else {
         resultTitle.innerText = "Test Complete!"
         if (goAgainText) goAgainText.innerText = "Go Again"

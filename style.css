@@ -450,6 +450,35 @@ main .test_content button {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .result_modal h1 {
+    font-size: 25px;
+  }
+
+  .result_modal p {
+    font-size: 17px;
+  }
+
+  .result_modal .stats_display_cards {
+    flex-direction: column;
+  }
+
+  .result_modal .stats_display_cards .stat_card {
+    padding: 10px;
+    width: 150px;
+  }
+
+  .result_modal .stats_display_cards .stat_card h3 {
+    font-size: 18px;
+  }
+
+  .result_modal .stats_display_cards .stat_card span {
+    font-weight:bolder;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   header nav {
     flex-direction: column;
