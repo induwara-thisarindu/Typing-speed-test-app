@@ -21,6 +21,8 @@ const resultTitle = resultModal.querySelector("h1")
 const resultDesc = resultModal.querySelector("p")
 const resultIcon = resultModal.querySelector(".completed_icon")
 const goAgainText = resultModal.querySelector(".retake_test_btn p")
+const difficultySelect = document.getElementById("difficulty_settings_select")
+const timeModeSelectDropdown = document.getElementById("time_mode_select")
 
 let selectedDifficulty = document.querySelector('input[name="difficulty_level"]:checked').value
 let selectedTimeMode = document.querySelector('input[name="time_setting_value"]:checked').value
@@ -68,6 +70,17 @@ timeModeSelect.forEach(radio => {
     })
 })
 
+// Listen for mobile difficulty changes
+difficultySelect.addEventListener("change", (e) => {
+    selectedDifficulty = e.target.value
+})
+
+// Listen for mobile mode changes
+timeModeSelectDropdown.addEventListener("change", (e) => {
+    selectedTimeMode = e.target.value
+    time.innerText = selectedTimeMode === "timed" ? "60" : "0"
+})
+
 startBtn.addEventListener('click', function() {
     if (allPassages.length === 0 && Object.keys(allPassages).length === 0) {
         console.log("Still loading data... please wait.")
@@ -90,7 +103,7 @@ modal.addEventListener('click', function() {
         return
     }
 
-    modal.style.display = "none"
+    modal.style.display = "none"  
 
     charIndex = 0
     mistakes = 0

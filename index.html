@@ -14,23 +14,26 @@
 <body>
   <header>
     <nav>
-      <img src="/assets/images/logo-large.svg" alt="logo_image">
+       <picture>
+        <source media="(max-width: 750px)" srcset="/assets/images/logo-small.svg">
+        <img src="/assets/images/logo-large.svg" alt="logo_image">
+      </picture> 
       <div class="personal_best_holder">
         <img src="assets/images/icon-personal-best.svg" alt="trophy">
-        <p>Personal best: <span id="personal_best_score">Not yet</span></p>
+        <p><span class="full_text">Personal </span> best: <span id="personal_best_score">Not yet</span></p>
       </div>
     </nav>
 
     <section class="test_info" id="test_info">
       <ul class="stats">
         <li>
-          <h3>WPM: <span id="words_per_min">0</span></h3>
+          <h3>WPM:</h3> <span id="words_per_min">0</span>
         </li>
         <li>
-          <h3>Accuracy: <span id="accuracy">100%</span></h3>
+          <h3>Accuracy: </h3><span id="accuracy">100%</span>
         </li>
         <li>
-          <h3>Time: <span id="time">0:60</span><span>s</span></h3>
+          <h3>Time: </h3><span id="time">0:60</span>
         </li>
       </ul>
       <div class="test_settings">
@@ -53,6 +56,21 @@
             <input type="radio" id="passage" name="time_setting_value" value="passage">
             <label for="passage"><p>Passage</p></label>
           </div>
+        </div>
+      </div>
+      <div class="test_settings_select">
+        <div class="difficulty_select">
+          <select name="difficulty_level" id="difficulty_settings_select">
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div class="time_select">
+            <select name="time_value" id="time_mode_select">
+                <option value="timed">Timed (60s)</option>
+                <option value="passage">Passage</option>
+            </select>
         </div>
       </div>
     </section>
