@@ -17,11 +17,11 @@
       <img src="/assets/images/logo-large.svg" alt="logo_image">
       <div class="personal_best_holder">
         <img src="assets/images/icon-personal-best.svg" alt="trophy">
-        <p>Personal best: <span id="personal_best_score">92 WPM</span></p>
+        <p>Personal best: <span id="personal_best_score">Not yet</span></p>
       </div>
     </nav>
 
-    <section class="test_info">
+    <section class="test_info" id="test_info">
       <ul class="stats">
         <li>
           <h3>WPM: <span id="words_per_min">0</span></h3>
@@ -58,7 +58,7 @@
     </section>
   </header>
 
-  <main>
+  <main id="main_content">
     <div class="test_content" id="test_content">
       <div class="modal" id="modal">
         <button id="start_test_btn">
@@ -85,6 +85,39 @@
       </div>
     </div>
   </main>
+
+  <div class="result_modal" id="result_modal">
+    <img class="completed_icon" src="./assets/images/icon-completed.svg" alt="completed_icon">
+    <h1>Test Complete!</h1>
+    <p>Solid run. Keep pushing to beat your high score.</p>
+    <div class="stats_display_cards">
+      <div class="stat_card">
+        <h3>WPM:</h3>
+        <span id="modal_words_per_min">85</span>
+      </div>
+      <div class="stat_card">
+        <h3>Accuracy:</h3>
+        <span class="acc_card_stat" id="modal_accuracy">90%</span>
+      </div>
+      <div class="stat_card">
+        <h3>Characters</h3>
+        <span id="char_stat"><span class="correct_text">120</span>/<span class="mistaken">5</span></span>
+      </div>
+    </div>
+    <button class="retake_test_btn" id="goagain_btn">
+      <div>
+        <p>Go Again</p>
+      </div>
+      <div>
+        <img src="assets/images/icon-restart.svg" alt="Restart">
+      </div>
+    </button>
+    <div id="confetti-container" class="confetti-overlay">
+        <img src="./assets/images/pattern-confetti.svg" alt="confetti">
+    </div>
+    <img src="assets/images/pattern-star-2.svg" alt="red_star" class="red_star">
+    <img src="assets/images/pattern-star-1.svg" alt="yellow_star" class="yellow_star">
+  </div>
 <!-- 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 

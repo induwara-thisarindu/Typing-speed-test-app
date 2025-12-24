@@ -248,3 +248,127 @@ main .test_content button {
 #modal {
     cursor: pointer;
 }
+
+.result_modal {
+  display: none;
+  gap: 20px;
+  flex-direction: column;
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.result_modal .completed_icon {
+  width: 100px;
+}
+
+.result_modal p {
+  color: var(--neutral-400);
+  font-size: 18px;
+}
+
+.result_modal .stats_display_cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.result_modal .stats_display_cards .stat_card {
+  border: 1px solid var(--neutral-500);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 175px;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.result_modal .stats_display_cards .stat_card h3 {
+  color: var(--neutral-400);
+  font-weight: 500;
+}
+
+.result_modal .stats_display_cards .stat_card span {
+  font-weight:bolder;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.result_modal .stats_display_cards .stat_card .acc_card_stat {
+  color: var(--red-500);
+}
+
+.result_modal .stats_display_cards .stat_card #char_stat {
+  color: var(--neutral-500);
+  font-size: 22px;
+}
+
+.result_modal .stats_display_cards .stat_card .correct_text {
+  color: var(--green-500);
+}
+
+.result_modal .stats_display_cards .stat_card .mistaken {
+  color: var(--red-500);
+}
+
+.result_modal button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  gap: 10px;
+  background-color: var(--neutral-0);
+  cursor: pointer;
+}
+
+.result_modal button p {
+  color: #121212;
+  font-weight: bold;
+}
+
+.result_modal button img {
+  filter: brightness(0);
+}
+
+.confetti-overlay {
+    display: none;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.result_modal.is-pb .confetti-overlay {
+    display: block;
+    animation: celebrate 1s ease-out;
+}
+
+@keyframes celebrate {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: scale(1.1); opacity: 0; }
+}
+
+.red_star {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 80px;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.yellow_star {
+  position: absolute;
+  bottom: 20%;
+  right: 12%;
+  width: 100px;
+  z-index: -1;
+  transform: rotate(15deg);
+}
