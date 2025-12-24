@@ -71,12 +71,10 @@ timeModeSelect.forEach(radio => {
     })
 })
 
-// Listen for mobile difficulty changes
 difficultySelect.addEventListener("change", (e) => {
     selectedDifficulty = e.target.value
 })
 
-// Listen for mobile mode changes
 timeModeSelectDropdown.addEventListener("change", (e) => {
     selectedTimeMode = e.target.value
     time.innerText = selectedTimeMode === "timed" ? "60" : "0"
@@ -212,6 +210,42 @@ window.addEventListener("keydown", (e) => {
     }
 })
 
+function handleCharInput(char) {
+    if (!isTestRunning || charIndex >= testText.querySelectorAll("span").length) return
+
+    const characters = testText.querySelectorAll("span")
+    const targetChar = characters[charIndex].innerText
+
+    if (char === targetChar) {
+        characters[charIndex].classList.add("correct")
+    } else {
+        characters[charIndex].classList.add("incorrect")
+        mistakes++
+    }
+
+    characters[charIndex].classList.remove("cursor")
+    charIndex++
+
+    if (charIndex < characters.length) {
+        characters[charIndex].classList.add("cursor")
+    } else {
+        endTest("complete")
+    }
+}
+
+mobileInput.addEventListener("input", (e) => {
+    const char = e.data
+    
+    if (!char) return; 
+
+    if (charIndex === 0 && !timerInterval) {
+        startTimer();
+    }
+
+    handleCharInput(char);
+    mobileInput.value = "";
+});
+
 function calculateResults() {
     let timeSpentSeconds = (selectedTimeMode === "timed") ? (60 - timeLeft) : secondsPassed
     if (timeSpentSeconds <= 0) timeSpentSeconds = 1
@@ -234,8 +268,8 @@ function calculateResults() {
         resultDesc.innerText = "You're getting faster. That was incredible typing."
         if (goAgainText) goAgainText.innerText = "Beat This Score"
         resultIcon.src = "./assets/images/icon-personal-best.svg"
-        resultIcon.src = "./assets/images/pattern-confetti.svg";
-        resultModal.classList.add("is-pb");
+        resultIcon.src = "./assets/images/pattern-confetti.svg"
+        resultModal.classList.add("is-pb")
     } else {
         resultTitle.innerText = "Test Complete!"
         resultDesc.innerText = "Solid run. Keep pushing to beat your high score."
