@@ -23,6 +23,7 @@ const resultIcon = resultModal.querySelector(".completed_icon")
 const goAgainText = resultModal.querySelector(".retake_test_btn p")
 const difficultySelect = document.getElementById("difficulty_settings_select")
 const timeModeSelectDropdown = document.getElementById("time_mode_select")
+const mobileInput = document.getElementById("mobile_input")
 
 let selectedDifficulty = "easy"
 let selectedTimeMode = "timed"
@@ -103,7 +104,8 @@ modal.addEventListener('click', function() {
         return
     }
 
-    modal.style.display = "none"  
+    modal.style.display = "none" 
+    mobileInput.focus() 
 
     charIndex = 0
     mistakes = 0
