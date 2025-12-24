@@ -24,8 +24,8 @@ const goAgainText = resultModal.querySelector(".retake_test_btn p")
 const difficultySelect = document.getElementById("difficulty_settings_select")
 const timeModeSelectDropdown = document.getElementById("time_mode_select")
 
-let selectedDifficulty = document.querySelector('input[name="difficulty_level"]:checked').value
-let selectedTimeMode = document.querySelector('input[name="time_setting_value"]:checked').value
+let selectedDifficulty = "easy"
+let selectedTimeMode = "timed"
 
 let timeLeft = 60
 let secondsPassed = 0
