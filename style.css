@@ -489,4 +489,10 @@ main .test_content button {
     padding-bottom: 20px;
     margin-bottom: -20px;
   }
+
+   .result_modal{
+    display: none;
+    position: relative;
+    margin-top: 100px;
+   }
 }
