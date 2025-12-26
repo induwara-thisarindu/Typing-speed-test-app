@@ -495,4 +495,13 @@ main .test_content button {
     position: relative;
     margin-top: 100px;
    }
+
+   .result_modal .completed_icon {
+    display: none;
+   }
+
+   .result_modal.is-pb .confetti-overlay {
+      display: none;
+      animation: celebrate 1s ease-out;
+  }
 }
