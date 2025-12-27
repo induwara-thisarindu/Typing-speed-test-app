@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Typing Speed Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,6 +22,9 @@
       <div class="personal_best_holder">
         <img src="assets/images/icon-personal-best.svg" alt="trophy">
         <p><span class="full_text">Personal </span> best: <span id="personal_best_score">Not yet</span></p>
+        <button id="leaderboard-btn" class="gold-btn">
+            Leaderboard
+        </button>
       </div>
     </nav>
 
@@ -116,6 +120,9 @@
   <div class="result_modal" id="result_modal">
     <img class="completed_icon" src="./assets/images/icon-completed.svg" alt="completed_icon">
     <h1>Test Complete!</h1>
+    <div id="user-input-container">
+        <input type="text" id="username-input" placeholder="Enter your name" maxlength="15">
+    </div>
     <p>Solid run. Keep pushing to beat your high score.</p>
     <div class="stats_display_cards">
       <div class="stat_card">
@@ -145,11 +152,34 @@
     <img src="assets/images/pattern-star-2.svg" alt="red_star" class="red_star">
     <img src="assets/images/pattern-star-1.svg" alt="yellow_star" class="yellow_star">
   </div>
+
+  <div id="leaderboard-modal" class="modal-overlay">
+      <div class="leaderboard-content">
+          <div class="leaderboard-header">
+              <h2><span class="crown-icon">👑</span> Global Top 10</h2>
+              <button id="close-leaderboard" class="close-btn">&times;</button>
+          </div>
+          <div class="table-responsive">
+              <table id="leaderboard-table">
+                  <thead>
+                      <tr>
+                          <th>Rank</th>
+                          <th>User</th>
+                          <th>WPM</th>
+                          <th>Acc%</th>
+                      </tr>
+                  </thead>
+                  <tbody id="leaderboard-body">
+                      </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
 <!-- 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-  <script src="index.js" type="module"></script>
+  <script src="index.js"></script>
 </body>
 </html>
