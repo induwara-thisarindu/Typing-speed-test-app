@@ -678,6 +678,10 @@ main .test_content button {
       position: relative;
       margin-top: 50px;
      }
+
+    header nav .personal_best_holder {
+      font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 400px) {
