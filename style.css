@@ -676,7 +676,7 @@ main .test_content button {
     .result_modal{
       display: none;
       position: relative;
-      margin-top: 100px;
+      margin-top: 50px;
      }
 }
 
