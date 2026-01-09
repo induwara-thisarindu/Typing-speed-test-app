@@ -680,7 +680,9 @@ main .test_content button {
      }
 
     header nav .personal_best_holder {
-      font-size: 10px;
+      font-size: 15px;
+      justify-content: center;
+      align-items: center;
     }
 }
 
