@@ -672,6 +672,14 @@ main .test_content button {
   }
 }
 
+@media screen and (max-width: 600px) {
+    .result_modal{
+      display: none;
+      position: relative;
+      margin-top: 100px;
+     }
+}
+
 @media screen and (max-width: 400px) {
   header nav {
     flex-direction: column;
